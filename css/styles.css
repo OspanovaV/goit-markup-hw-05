@@ -65,6 +65,10 @@ button {
 
   color: var(--title-text-color);
   background-color: var(--section-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button:focus,
@@ -100,6 +104,7 @@ button:hover {
 /* фиксированный хедер */
 .page-header {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -146,6 +151,8 @@ button:hover {
   line-height: 1.15;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav a:hover,
@@ -185,6 +192,8 @@ button:hover {
   line-height: 0.15;
   letter-spacing: 0.02em;
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link a:hover,
@@ -218,7 +227,7 @@ button:hover {
     url("../images/hero.jpg");
 
   background-color: #c4c4c4;
-  background-size: contain;
+  background-size: cover;
 }
 .hero-title {
   margin: 0 auto 30px;
@@ -243,6 +252,8 @@ button:hover {
   background-color: var(--accent-color);
   border-radius: 4px;
   border: 1px solid transparent;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -326,7 +337,26 @@ button:hover {
 .work-list-item:not(:nth-child(3n)) {
   margin-right: 30px;
 }
+.work-list-item {
+  position: relative;
+}
+.work-box {
+  position: absolute;
+  bottom: 0;
+  width: 370px;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+}
+.work-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--secondary-white-color);
+  text-transform: uppercase;
+  text-align: center;
 
+  margin-top: 27px;
+}
 /* Наша команда */
 .team {
   background-color: var(--section-color);
@@ -391,12 +421,16 @@ button:hover {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon {
   width: 20px;
   height: 20px;
   fill: var(--icon-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:hover .social-icon,
 .social-link:focus .social-icon {
@@ -415,6 +449,8 @@ button:hover {
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-item:not(:nth-child(6n)) {
@@ -436,6 +472,8 @@ button:hover {
   width: 106px;
   height: 60px;
   fill: var(--icon-color);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-item:hover .client-icon,
@@ -484,6 +522,8 @@ footer {
 
   line-height: 1.7;
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -545,11 +585,11 @@ footer {
   margin-top: 8px;
   margin-right: 8px;
   margin-left: auto;
-
   border-radius: 50%;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -581,14 +621,17 @@ footer {
 .portfolio-card:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 }
+
+.portfolio-link {
+  display: block;
+  text-decoration: none;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .portfolio-link:hover,
 .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-.portfolio-link {
-  display: block;
-  text-decoration: none;
 }
 
 .portfolio-link-container {
